@@ -36,6 +36,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 import org.junit.Test;
 
+import static com.google.gson.JavaSerializationTest.serializedCopy;
+
 /**
  * Unit test for the {@link JsonObject} class.
  *
@@ -352,5 +354,13 @@ public class JsonObjectTest {
       assertEquals(i - 1, o.size());
       assertEquals(new ArrayList<>(expectedEntriesQueue), new ArrayList<>(o.entrySet()));
     }
+  }
+
+  @Test
+  public void testSerialization() throws Exception {
+    JsonObject a = new JsonObject();
+    a.add("foo", new JsonArray());
+    a.add("bar", new JsonObject());
+    assertEquals(a, serializedCopy(a));
   }
 }

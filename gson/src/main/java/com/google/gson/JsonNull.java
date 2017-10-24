@@ -66,4 +66,8 @@ public final class JsonNull extends JsonElement {
   public boolean equals(Object other) {
     return other instanceof JsonNull;
   }
+
+  private Object readResolve() {
+    return INSTANCE;
+  }
 }

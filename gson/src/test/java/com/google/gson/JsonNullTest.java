@@ -21,6 +21,9 @@ import static org.junit.Assert.assertSame;
 import com.google.gson.common.MoreAsserts;
 import org.junit.Test;
 
+
+import static com.google.gson.JavaSerializationTest.serializedCopy;
+
 /**
  * @author Jesse Wilson
  */
@@ -40,5 +43,10 @@ public final class JsonNullTest {
     JsonNull a = new JsonNull();
     assertSame(JsonNull.INSTANCE, a.deepCopy());
     assertSame(JsonNull.INSTANCE, JsonNull.INSTANCE.deepCopy());
+  }
+
+  @Test
+  public void testSerialization() throws Exception {
+    assertSame(JsonNull.INSTANCE, serializedCopy(JsonNull.INSTANCE));
   }
 }

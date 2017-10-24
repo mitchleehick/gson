@@ -25,6 +25,8 @@ import com.google.gson.common.MoreAsserts;
 import java.math.BigInteger;
 import org.junit.Test;
 
+import static com.google.gson.JavaSerializationTest.serializedCopy;
+
 /**
  * @author Jesse Wilson
  */
@@ -369,5 +371,31 @@ public final class JsonArrayTest {
     jsonArray.add((Boolean) null);
 
     assertEquals("[\"a\",\"a\",true,true,1212,1212,34.34,34.34,null,null]", jsonArray.toString());
+  }
+
+  @Test
+  public void testSerialization() throws Exception {
+    assertEquals(new JsonArray(), serializedCopy(new JsonArray()));
+    JsonArray original = new JsonArray();
+    original.add(false);
+    assertEquals(original, serializedCopy(original));
+    original.add('a');
+    assertEquals(original, serializedCopy(original));
+    original.add((String) null);
+    assertEquals(original, serializedCopy(original));
+    original.add("b");
+    assertEquals(original, serializedCopy(original));
+    original.add(20L);
+    assertEquals(original, serializedCopy(original));
+    original.add(20);
+    assertEquals(original, serializedCopy(original));
+    original.add(20f);
+    assertEquals(original, serializedCopy(original));
+    original.add(20d);
+    assertEquals(original, serializedCopy(original));
+    original.add((short) 20);
+    assertEquals(original, serializedCopy(original));
+    original.add((byte) 20);
+    assertEquals(original, serializedCopy(original));
   }
 }
