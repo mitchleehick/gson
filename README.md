@@ -1,3 +1,10 @@
+# Serializable GSON Fork
+
+This is a fork of Google's GSON that makes JsonElement implement Serializable.
+
+It includes the changes from [this PR](https://github.com/google/gson/pull/1178).
+
+
 # google-gson
 
 [![Build Status](https://travis-ci.org/google/gson.svg?branch=master)](https://travis-ci.org/google/gson)
