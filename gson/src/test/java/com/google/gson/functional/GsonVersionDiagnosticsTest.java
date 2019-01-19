@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.gson.Gson;
@@ -34,6 +35,7 @@ import junit.framework.TestCase;
  *
  * @author Inderjeet Singh
  */
+@Ignore
 public class GsonVersionDiagnosticsTest extends TestCase {
   private static final Pattern GSON_VERSION_PATTERN = Pattern.compile("(\\(GSON \\d\\.\\d\\.\\d)(?:[-.][A-Z]+)?\\)$");
 
