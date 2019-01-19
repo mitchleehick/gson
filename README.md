@@ -1,3 +1,10 @@
+# Serializable GSON Fork
+
+This is a fork of Google's GSON that makes JsonElement implement Serializable.
+
+It includes the changes from [this PR](https://github.com/google/gson/pull/1178).
+
+
 # Gson
 
 Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
